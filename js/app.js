@@ -105,9 +105,23 @@ function sendEmail(e) {
         spinner.classList.add('hidden');
         spinner.classList.remove('flex');
         resetForm();
+
+        const exitMessage = document.createElement('P');
+        exitMessage.classList.add('bg-green-500', 'text-white', 'p-2', 'text-center', 'rounded-lg', 'mt-10',
+         'font-bold', 'text-sm', 'uppercase');
+        exitMessage.textContent = 'Message sucess send';
+     
+        form.appendChild(exitMessage);
+
+        setTimeout( () => {
+            exitMessage.remove();
+        },2000)
+
     }, 2000);
 
    resetForm()
+
+  
 }
 
 
@@ -121,4 +135,5 @@ function resetForm() {
     form.reset();
     checkinputForms();
 }
+
 
